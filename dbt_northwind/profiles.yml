@@ -1,0 +1,15 @@
+dbt_northwind:
+  outputs:
+    dev:
+      type: duckdb
+      path: 'northwind.duckdb'
+      extensions:
+        - httpfs
+        - s3
+      settings:
+        s3_endpoint: 'localhost:9000'
+        s3_access_key_id: 'admin'
+        s3_secret_access_key: '00000000'
+        s3_use_ssl: false
+        s3_url_style: 'path'
+  target: dev

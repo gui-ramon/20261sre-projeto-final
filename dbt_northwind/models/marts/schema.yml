@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: top_10_products_revenue
+    description: "Ranking dos 10 produtos com maior receita líquida e sua evolução mensal."
+    columns:
+      - name: product_id
+        description: "ID único do produto."
+        tests:
+          - not_null
+      - name: total_net_revenue
+        description: "Receita líquida total acumulada."
+      - name: monthly_net_revenue
+        description: "Receita líquida no mês específico."

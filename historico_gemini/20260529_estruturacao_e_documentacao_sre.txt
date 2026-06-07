@@ -1,0 +1,25 @@
+# Histórico de Conversa - 29/05/2026
+Tópico: Estruturação Inicial e Documentação SRE (Olist Pipeline)
+
+## Resumo das Atividades
+1. **Estruturação de Pastas:** Criação do diretório `documents/` e subpastas de agentes e skills.
+2. **Definição de Diretrizes:** Atualização do `AGENTS.md` com restrições do AWS Learner Lab (sem Glue/Redshift) e padrões de saída (3 riscos, 2 ambiguidades).
+3. **Requisitos:**
+    - Elicitação de 5 Requisitos Funcionais (RF-01 a RF-05) focados em ETL Python -> Postgres -> Grafana.
+    - Elicitação de 5 Requisitos Não Funcionais (RNF-01 a RNF-05) baseados na ISO 25010 com SLIs/SLOs mensuráveis.
+4. **Arquitetura:**
+    - Desenvolvimento do documento `03_architecture.md` usando os 5 pontos de vista do RM-ODP.
+    - Registro de 3 ADRs (EC2 para ETL, Postgres para Persistência, SSM para Segredos).
+5. **Matriz de Rastreabilidade (RTM):** Criação da `04_rtm.md` vinculando requisitos, componentes e planos de teste.
+6. **Planos de Teste:**
+    - **Carga (05):** Cenários k6 (Load, Soak, Spike, Stress).
+    - **Segurança (06):** Análise STRIDE, OWASP Top 10 e ferramentas (Bandit, Trivy, ZAP, Gitleaks, Prowler).
+    - **Modelagem (07):** ATAM enxuto com identificação de riscos e trade-offs.
+
+## Decisões Técnicas Principais
+- Uso estrito de serviços AWS gratuitos/disponíveis no Academy Learner Lab.
+- Abordagem SRE-first com foco em métricas e monitoramento desde a concepção.
+- Rastreabilidade total entre negócio (RF) e infraestrutura (Engineering Viewpoint).
+
+## Status Final
+Todos os 10 requisitos iniciais estão cobertos por componentes e casos de teste definidos.

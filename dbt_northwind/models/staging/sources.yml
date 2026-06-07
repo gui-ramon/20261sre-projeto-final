@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: minio
+    schema: main
+    loader: s3
+    tables:
+      - name: orders
+        description: "Northwind orders data from MinIO"
+        meta:
+          external_location: "s3://northwind/northwind_orders.csv"
+      - name: order_details
+        description: "Northwind order details data from MinIO"
+        meta:
+          external_location: "s3://northwind/northwind_order_details.csv"
