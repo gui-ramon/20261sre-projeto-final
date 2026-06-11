@@ -29,7 +29,7 @@ services:
       - MINIO_ACCESS_KEY=admin
       - MINIO_SECRET_KEY=00000000
     working_dir: /opt/dagster/app
-    command: /bin/bash -c "pip install dagster dagit dagster-duckdb dagster-dbt boto3 pandas duckdb && dagster dev -h 0.0.0.0 -p 3000"
+    command: /bin/bash -c "pip install dagster dagster-webserver dagster-duckdb dagster-dbt boto3 pandas duckdb && dagster dev -h 0.0.0.0 -p 3000 -f definitions.py"
     ports:
       - "3000:3000"
     depends_on:
